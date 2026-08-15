@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = '/api';
+const API_BASE_URL = 'https://analytixai-nine.vercel.app/api';
 
 const api = axios.create({
   baseURL: API_BASE_URL,
@@ -31,7 +31,7 @@ export const projectsAPI = {
 
 export const queryAPI = {
   runQuery: (question, projectId = 1) => api.post('/query', { question, project_id: projectId }),
-  exportExcel: (columns, rows, title = "Analytix AI Hisoboti") => 
+  exportExcel: (columns, rows, title = "Analytix AI Hisoboti") =>
     api.post('/reports/export-excel', { columns, rows, title }, { responseType: 'blob' }),
 };
 
