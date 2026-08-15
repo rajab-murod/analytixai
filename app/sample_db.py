@@ -112,6 +112,7 @@ def init_sample_database():
             (2026, "Fevral", 74000.00, 31.2)
         ])
 
+
     conn.commit()
     conn.close()
     return SAMPLE_DB_PATH
